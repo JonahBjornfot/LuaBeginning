@@ -34,6 +34,7 @@ love.keypressed = function(pressed_key)
       current_color = {0, 1, 1, 1}
       RandomNumber = love.math.random(1, 4)
       print(RandomNumber)
+    else score = score - 1
     end
   elseif pressed_key == 'w' then
     if RandomNumber == 2 then
@@ -41,6 +42,7 @@ love.keypressed = function(pressed_key)
       current_color = {1, 0, 0, 1}
       RandomNumber = love.math.random(1, 4)
       print(RandomNumber)
+    else score = score - 1
     end
   elseif pressed_key == 's' then
     if RandomNumber == 3 then
@@ -48,6 +50,7 @@ love.keypressed = function(pressed_key)
       current_color = {1, 1, 1, 1}
       RandomNumber = love.math.random(1, 4)
       print(RandomNumber)
+    else score = score - 1
     end
   elseif pressed_key == 'd' then
     if RandomNumber == 4 then
@@ -55,6 +58,7 @@ love.keypressed = function(pressed_key)
       current_color = {1, 0, 1, 1}
       RandomNumber = love.math.random(1, 4)
       print(RandomNumber)
+    else score = score - 1
     end
   elseif pressed_key == 'escape' then
     love.event.quit()
