@@ -3,7 +3,8 @@ local seconds = 30
 local score = 0
 local game = "Spamclickers"
 local helpers = "M to Start    P to pause   Space to reset"
-local buttons = "a - 1, s - 2, w - 3, d - 4"
+local buttons = "a - 1, w - 2, s - 3, d - 4"
+local rightnumber = "I denhär verision måste du använda debug consolen"
 local red = 200/255
 local green = 200/255
 local blue = 200/255
@@ -15,9 +16,10 @@ love.draw = function()
   local clock_display = 'Seconds: ' .. math.floor(seconds)
   love.graphics.print(clock_display, 0, 0, 0, 3, 3)
   love.graphics.print(score, 700, 0, 0, 3, 3)
-  love.graphics.print(game, 325, 0, 0, 3, 3)
-  love.graphics.print(helpers, 100, 50, 0, 2, 2)
-  love.graphics.print(buttons, 325, 150, 0, 2, 2)
+  love.graphics.print(game, 300, 0, 0, 3, 3)
+  love.graphics.print(helpers, 175, 50, 0, 2, 2)
+  love.graphics.print(buttons, 600, 85, 0, 1, 1)
+  love.graphics.print(rightnumber, 20, 85, 0, 1, 1)
 
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
@@ -86,6 +88,7 @@ love.keypressed = function(pressed_key)
         if seconds < 0 then
           seconds = seconds + dt
           RandomNumber = 0
+          game = "Ended"
       end
     end
   end
@@ -95,6 +98,7 @@ love.update = function(dt)
     if seconds < 0 then
       seconds = seconds + dt
       RandomNumber = 0
+      game = "Ended"
     end
   end
 
