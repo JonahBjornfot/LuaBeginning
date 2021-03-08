@@ -1,7 +1,7 @@
 local current_color = {1, 1, 1, 1}
 local seconds = 30
 local score = 0
-local game = "Spamclickers"
+local game = "SpamKlickers"
 local helpers = "M to Start    P to pause   Space to reset"
 local buttons = "a - 1, w - 2, s - 3, d - 4"
 local rightnumber = "I denhär verision måste du använda debug consolen"
