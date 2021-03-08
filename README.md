@@ -1,5 +1,5 @@
 # Spamklicker
-Ett spel där du ska klika på knappar för att få poäng. Du har 30 sekunder på dig! Men var noga att klicka rätt!
+Ett spel där du ska klicka på knappar för att få poäng. Du har 30 sekunder på dig! Men var noga att klicka rätt! Du måste även använda debugconsolen i denna version av spelet!
 
-Ladda ned genom att klicka på görna "code" knappen och sedan "Download zip". Öppna sedan mappen i visial studio code och kör spelet!
+Ladda ned genom att klicka på gröna "code" knappen och sedan "Download zip". Öppna sedan mappen i Visual Studio Code och kör spelet!
 (Kräver att Love2D är nedladdat och installerat)
