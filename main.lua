@@ -5,9 +5,9 @@ local game = "Spamclickers"
 local helpers = "M to Start    P to pause   Space to reset"
 local buttons = "a - 1, w - 2, s - 3, d - 4"
 local rightnumber = "I denhär verision måste du använda debug consolen"
-local red = 200/255
-local green = 200/255
-local blue = 200/255
+local red = 100/255
+local green = 100/255
+local blue = 100/255
 Color = { red, green, blue}
 
 love.draw = function()
@@ -66,6 +66,7 @@ love.keypressed = function(pressed_key)
     score = 0
     seconds = 30
     RandomNumber = love.math.random(1, 4)
+    print(RandomNumber)
     game = "Restarted"
   elseif pressed_key == "p" then
     game = "Pausad"
@@ -103,6 +104,7 @@ love.update = function(dt)
       seconds = seconds + dt
       RandomNumber = 0
       game = "Ended"
+      love.event.quit()
     end
   end
 
