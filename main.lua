@@ -7,6 +7,7 @@ local score = 0
 local game = "SpamKlickers"
 local helpers = "S to Start    P to pause   Space to reset    ESC to quit"
 local gamenumber = 0
+local highscore = 0
 local red = 175/255
 local green = 165/255
 local blue = 100/255
@@ -23,6 +24,8 @@ love.draw = function()
   love.graphics.print(game, 300, 0, 0, 3, 3)
   love.graphics.print(helpers, 100, 50, 0, 2, 2)
   love.graphics.print(gamenumber, 10, 50, 0, 2, 2)
+  love.graphics.print(highscore, 30, 50, 0, 2, 2)
+
 
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
@@ -91,7 +94,9 @@ love.keypressed = function(pressed_key)
         if seconds < 0 then
           seconds = seconds + dt
           RandomNumber = 0
+          gamenumber = RandomNumber
           game = "Ended"
+          highscore = score
       end
     if pressed_key == "p" then
       game = "Pausad"
