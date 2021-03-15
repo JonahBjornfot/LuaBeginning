@@ -6,6 +6,7 @@ local seconds = 30
 local score = 0
 local game = "SpamKlickers"
 local helpers = "S to Start    P to pause   Space to reset    ESC to quit"
+local gamenumber = 0
 local red = 175/255
 local green = 165/255
 local blue = 100/255
@@ -21,6 +22,7 @@ love.draw = function()
   love.graphics.print(score, 700, 0, 0, 3, 3)
   love.graphics.print(game, 300, 0, 0, 3, 3)
   love.graphics.print(helpers, 100, 50, 0, 2, 2)
+  love.graphics.print(gamenumber, 10, 50, 0, 2, 2)
 
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
@@ -37,7 +39,7 @@ love.keypressed = function(pressed_key)
       score = score + 1
       current_color = {0, 1, 1, 1}
       RandomNumber = love.math.random(1, 4)
-      print(RandomNumber)
+      gamenumber = RandomNumber
     else score = score - 1
     end
   elseif pressed_key == '2' then
@@ -45,7 +47,7 @@ love.keypressed = function(pressed_key)
       score = score + 1
       current_color = {1, 0, 0, 1}
       RandomNumber = love.math.random(1, 4)
-      print(RandomNumber)
+      gamenumber = RandomNumber
     else score = score - 1
     end
   elseif pressed_key == '3' then
@@ -53,7 +55,7 @@ love.keypressed = function(pressed_key)
       score = score + 1
       current_color = {1, 1, 0, 1}
       RandomNumber = love.math.random(1, 4)
-      print(RandomNumber)
+      gamenumber = RandomNumber
     else score = score - 1
     end
   elseif pressed_key == '4' then
@@ -61,7 +63,7 @@ love.keypressed = function(pressed_key)
       score = score + 1
       current_color = {1, 0, 1, 1}
       RandomNumber = love.math.random(1, 4)
-      print(RandomNumber)
+      gamenumber = RandomNumber
     else score = score - 1
     end
   elseif pressed_key == 'escape' then
@@ -81,7 +83,7 @@ love.keypressed = function(pressed_key)
   --   end
   elseif pressed_key == "s" then
       RandomNumber = love.math.random(1, 4)
-      print(RandomNumber)
+      gamenumber = RandomNumber
       game = "Running"
       end
       love.update = function (dt)
