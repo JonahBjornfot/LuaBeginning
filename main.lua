@@ -75,7 +75,7 @@ love.keypressed = function(pressed_key)
     score = 0
     seconds = 30
     RandomNumber = love.math.random(1, 4)
-    print(RandomNumber)
+    gamenumber = RandomNumber
     game = "Restarted"
   -- elseif pressed_key == "p" then
   --   game = "Pausad"
