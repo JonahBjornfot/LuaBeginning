@@ -6,6 +6,9 @@ local seconds = 30
 local score = 0
 local game = "SpamKlickers"
 local helpers = "S to Start    P to pause   Space to reset    ESC to quit"
+local pressbutton = "Press:"
+local scoretext = "Score:"
+local highscoretext = "Highscore:"
 local gamenumber = 0
 local highscore = 0
 local red = 175/255
@@ -16,16 +19,18 @@ Color = {red, green, blue}
 -- Ritar / Pritar - ut på skärmen
 
 love.draw = function()
-  local square = {100, 100, 100, 500, 700, 500, 700, 100}
+  local square = {100, 100, 100, 300, 700, 300, 700, 100}
 
   local clock_display = 'Seconds: ' .. math.floor(seconds)
   love.graphics.print(clock_display, 0, 0, 0, 3, 3)
-  love.graphics.print(score, 700, 0, 0, 3, 3)
+  love.graphics.print(score, 700, 500, 0, 3, 3)
+  love.graphics.print(scoretext, 570, 500, 0, 3, 3)
   love.graphics.print(game, 300, 0, 0, 3, 3)
   love.graphics.print(helpers, 100, 50, 0, 2, 2)
-  love.graphics.print(gamenumber, 10, 50, 0, 2, 2)
-  love.graphics.print(highscore, 30, 50, 0, 2, 2)
-
+  love.graphics.print(gamenumber, 400, 400, 0, 4, 4)
+  love.graphics.print(pressbutton, 250, 400, 0, 4, 4)
+  love.graphics.print(highscore, 150, 500, 0, 2, 2)
+  love.graphics.print(highscoretext, 10, 500, 0, 2, 2)
 
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
@@ -96,7 +101,9 @@ love.keypressed = function(pressed_key)
           RandomNumber = 0
           gamenumber = RandomNumber
           game = "Ended"
-          highscore = score
+          if score > highscore then
+             highscore = score
+          end
       end
     if pressed_key == "p" then
       game = "Pausad"
