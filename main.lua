@@ -1,7 +1,7 @@
 
--- Globala Variabler
+-- Global Variebels
 
-local current_color = {1, 1, 1, 1}
+local current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
 local seconds = 30
 local score = 0
 local game = "SpamKlickers"
@@ -16,7 +16,7 @@ local green = 165/255
 local blue = 100/255
 Color = {red, green, blue}
 
--- Ritar / Pritar - ut på skärmen
+-- Draws on screen
 
 love.draw = function()
   local square = {100, 100, 100, 300, 700, 300, 700, 100}
@@ -39,13 +39,13 @@ love.draw = function()
 end
 
 
--- If text samt koden för funktionerna
+-- If functions, the code that makes the game work.
 
 love.keypressed = function(pressed_key)
   if pressed_key == '1' then
     if RandomNumber == 1 then
       score = score + 1
-      current_color = {0, 1, 1, 1}
+      current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
     else score = score - 1
@@ -53,7 +53,7 @@ love.keypressed = function(pressed_key)
   elseif pressed_key == '2' then
     if RandomNumber == 2 then
       score = score + 1
-      current_color = {1, 0, 0, 1}
+      current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
     else score = score - 1
@@ -61,7 +61,7 @@ love.keypressed = function(pressed_key)
   elseif pressed_key == '3' then
     if RandomNumber == 3 then
       score = score + 1
-      current_color = {1, 1, 0, 1}
+      current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
     else score = score - 1
@@ -69,7 +69,7 @@ love.keypressed = function(pressed_key)
   elseif pressed_key == '4' then
     if RandomNumber == 4 then
       score = score + 1
-      current_color = {1, 0, 1, 1}
+      current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
     else score = score - 1
@@ -82,13 +82,6 @@ love.keypressed = function(pressed_key)
     RandomNumber = love.math.random(1, 4)
     gamenumber = RandomNumber
     game = "Restarted"
-  -- elseif pressed_key == "p" then
-  --   game = "Pausad"
-  --   -- score = score - 5
-  --   RandomNumber = 0
-  --   love.update = function(dt)
-  --     seconds = seconds +  dt
-  --   end
   elseif pressed_key == "s" then
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
@@ -116,7 +109,7 @@ love.keypressed = function(pressed_key)
   end
 end
 
-  -- Debug consolen
+  -- Debug console
 
 love.load = function ()
     print("The game has started!")
