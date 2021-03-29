@@ -4,11 +4,6 @@
 local current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
 local seconds = 30
 local score = 0
-local game = "SpamKlickers"
-local helpers = "S to Start    P to pause   Space to reset    ESC to quit"
-local pressbutton = "Press:"
-local scoretext = "Score:"
-local highscoretext = "Highscore:"
 local gamenumber = 0
 local highscore = 0
 local red = 100/255
@@ -21,15 +16,12 @@ Color = {red, green, blue}
 
 love.draw = function()
   local clock_display = 'Seconds: ' .. math.floor(seconds) 
-  love.graphics.print(clock_display, 0, 0, 0, 3, 3)
-  love.graphics.print(score, 700, 500, 0, 3, 3)
-  love.graphics.print(scoretext, 570, 500, 0, 3, 3)
-  love.graphics.print(game, 300, 0, 0, 3, 3)
-  love.graphics.print(helpers, 100, 50, 0, 2, 2)
-  love.graphics.print(gamenumber, 400, 400, 0, 4, 4)
-  love.graphics.print(pressbutton, 250, 400, 0, 4, 4)
-  love.graphics.print(highscore, 150, 500, 0, 2, 2)
-  love.graphics.print(highscoretext, 10, 500, 0, 2, 2)
+  love.graphics.print(clock_display, 275, 360, 0, 3, 3)
+  love.graphics.print('Score: ' .. score, 650, 525, 0, 2, 2)
+  love.graphics.print('SpamKlickers', 275, 0, 0, 3, 3)
+  love.graphics.print('S to Start    P to pause   Space to reset    ESC to quit', 75, 50, 0, 2, 2)
+  love.graphics.print('Press: ' .. gamenumber, 315, 435, 0, 3, 3)
+  love.graphics.print('Highscore:' .. highscore, 20, 525, 0, 2, 2)
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
   love.graphics.setBackgroundColor(Color)
