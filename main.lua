@@ -11,17 +11,16 @@ local scoretext = "Score:"
 local highscoretext = "Highscore:"
 local gamenumber = 0
 local highscore = 0
-local red = 175/255
-local green = 165/255
+local red = 100/255
+local green = 100/255
 local blue = 100/255
+local square = {100, 100, 100, 300, 700, 300, 700, 100}
 Color = {red, green, blue}
 
 -- Draws on screen
 
 love.draw = function()
-  local square = {100, 100, 100, 300, 700, 300, 700, 100}
-
-  local clock_display = 'Seconds: ' .. math.floor(seconds)
+  local clock_display = 'Seconds: ' .. math.floor(seconds) 
   love.graphics.print(clock_display, 0, 0, 0, 3, 3)
   love.graphics.print(score, 700, 500, 0, 3, 3)
   love.graphics.print(scoretext, 570, 500, 0, 3, 3)
@@ -31,10 +30,8 @@ love.draw = function()
   love.graphics.print(pressbutton, 250, 400, 0, 4, 4)
   love.graphics.print(highscore, 150, 500, 0, 2, 2)
   love.graphics.print(highscoretext, 10, 500, 0, 2, 2)
-
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
-
   love.graphics.setBackgroundColor(Color)
 end
 
