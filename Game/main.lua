@@ -1,7 +1,8 @@
 
--- Global Variebels
+-- Global Variabels
 
 local current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
+local txtfont = love.graphics.newFont('tfont.ttf', 35)
 local gamename = "SpamKlickers"
 local seconds = 30
 local score = 0
@@ -11,7 +12,8 @@ local red = 100/255
 local green = 100/255
 local blue = 100/255
 Color = {red, green, blue}
-local square = {100, 100, 100, 300, 700, 300, 700, 100}
+local square = {100, 100, 100, 300, 1275, 300, 1275, 100}
+local mybackground = nil
 
 -- Sounds!
 
@@ -25,20 +27,22 @@ local Sound6 = love.audio.newSource("winxp.wav", "static")
 -- Draws on screen
 
 love.draw = function()
-  local clock_display = 'Seconds: ' .. math.floor(seconds) 
-  love.graphics.print(clock_display, 275, 360, 0, 3, 3)
-  love.graphics.print('Score: ' .. score, 650, 525, 0, 2, 2)
-  love.graphics.print(gamename, 275, 0, 0, 3, 3)
-  love.graphics.print('S to Start    P to pause   Space to reset    ESC to quit', 75, 50, 0, 2, 2)
-  love.graphics.print('Press: ' .. gamenumber, 315, 435, 0, 3, 3)
-  love.graphics.print('Highscore:' .. highscore, 20, 525, 0, 2, 2)
+  love.graphics.setFont(txtfont)
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.draw(mybackground)
+  local clock_display = 'Secounds: ' .. math.floor(seconds) 
+  love.graphics.print(clock_display, 525, 460, 0, 1, 1)
+  love.graphics.print('Score: ' .. score, 1100, 675, 0, 1, 1)
+  love.graphics.print(gamename, 525, 35, 0, 1, 1)
+  love.graphics.print('S to Start    P to pause   Space to reset    ESC to quit', 150, 350, 0, 1, 1)
+  love.graphics.print('Press: ' .. gamenumber, 600, 550, 0, 1, 1)
+  love.graphics.print('Highscore:' .. highscore, 50, 675, 0, 1, 1)
   love.graphics.setColor(current_color)
   love.graphics.polygon('fill', square)
   love.graphics.setBackgroundColor(Color)
 end
 
-
--- If functions, the code that makes the game work.
+-- Functions, the code that makes the game work.
 
 love.keypressed = function(pressed_key)
   if pressed_key == '1' then
@@ -132,4 +136,5 @@ end
 
 love.load = function ()
     print("The game has started!")
+    mybackground = love.graphics.newImage('pictu.jpg')
 end
