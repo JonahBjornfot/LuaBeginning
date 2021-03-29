@@ -10,6 +10,9 @@ local red = 100/255
 local green = 100/255
 local blue = 100/255
 local square = {100, 100, 100, 300, 700, 300, 700, 100}
+local Sound1 = love.audio.newSource("johnsen.wav", "static")
+local Sound2 = love.audio.newSource("right.wav", "static")
+local Sound3 = love.audio.newSource("wrong.wav", "static")
 Color = {red, green, blue}
 
 -- Draws on screen
@@ -37,7 +40,10 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-    else score = score - 1
+      Sound2:play()
+    else 
+      score = score - 1
+      Sound3:play()
     end
   elseif pressed_key == '2' then
     if RandomNumber == 2 then
@@ -45,7 +51,10 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-    else score = score - 1
+      Sound2:play()
+    else 
+      score = score - 1
+      Sound3:play()
     end
   elseif pressed_key == '3' then
     if RandomNumber == 3 then
@@ -53,7 +62,10 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-    else score = score - 1
+      Sound2:play()
+    else 
+      score = score - 1
+      Sound3:play()
     end
   elseif pressed_key == '4' then
     if RandomNumber == 4 then
@@ -61,7 +73,10 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-    else score = score - 1
+      Sound2:play()
+    else 
+      score = score - 1
+      Sound3:play()
     end
   elseif pressed_key == 'escape' then
     love.event.quit()
@@ -70,11 +85,9 @@ love.keypressed = function(pressed_key)
     seconds = 30
     RandomNumber = love.math.random(1, 4)
     gamenumber = RandomNumber
-    game = "Restarted"
   elseif pressed_key == "s" then
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-      game = "Running"
       end
       love.update = function (dt)
         seconds = seconds - dt
@@ -82,13 +95,12 @@ love.keypressed = function(pressed_key)
           seconds = seconds + dt
           RandomNumber = 0
           gamenumber = RandomNumber
-          game = "Ended"
           if score > highscore then
              highscore = score
+            Sound1:play()
           end
       end
     if pressed_key == "p" then
-      game = "Pausad"
       score = score - 5
       RandomNumber = 0
       love.update = function()
