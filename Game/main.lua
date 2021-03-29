@@ -10,11 +10,17 @@ local highscore = 0
 local red = 100/255
 local green = 100/255
 local blue = 100/255
-local square = {100, 100, 100, 300, 700, 300, 700, 100}
-local Sound1 = love.audio.newSource("johnsen.wav", "static")
-local Sound2 = love.audio.newSource("right.wav", "static")
-local Sound3 = love.audio.newSource("wrong.wav", "static")
 Color = {red, green, blue}
+local square = {100, 100, 100, 300, 700, 300, 700, 100}
+
+-- Sounds!
+
+local Sound1 = love.audio.newSource("johnsen.wav", "static")
+local Sound2 = love.audio.newSource("sky.wav", "static")
+local Sound3 = love.audio.newSource("wrong.wav", "static")
+local Sound4 = love.audio.newSource("whymad.wav", "static")
+local Sound5 = love.audio.newSource("letsgo.wav", "static")
+local Sound6 = love.audio.newSource("winxp.wav", "static")
 
 -- Draws on screen
 
@@ -41,7 +47,6 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-      Sound2:play()
     else 
       score = score - 1
       Sound3:play()
@@ -52,7 +57,6 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-      Sound2:play()
     else 
       score = score - 1
       Sound3:play()
@@ -63,7 +67,6 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-      Sound2:play()
     else 
       score = score - 1
       Sound3:play()
@@ -74,7 +77,6 @@ love.keypressed = function(pressed_key)
       current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
-      Sound2:play()
     else 
       score = score - 1
       Sound3:play()
@@ -86,10 +88,17 @@ love.keypressed = function(pressed_key)
     seconds = 30
     RandomNumber = love.math.random(1, 4)
     gamenumber = RandomNumber
+    gamename = "Restarted"
+    Sound5:play()
+    Sound2:play()
+    Sound1:stop()
+    Sound4:stop()
   elseif pressed_key == "s" then
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
       gamename = "Running"
+      Sound5:play()
+      Sound2:play()
       end
       love.update = function (dt)
         seconds = seconds - dt
@@ -97,15 +106,21 @@ love.keypressed = function(pressed_key)
           seconds = seconds + dt
           RandomNumber = 0
           gamenumber = RandomNumber
+          gamename = "Ended"
+          Sound2:stop()
           if score > highscore then
              highscore = score
             Sound1:play()
+          elseif score < highscore then
+            Sound4:play()
           end
       end
     if pressed_key == "p" then
       score = score - 5
-      RandomNumber = 0
-      gamename = "Paused"
+      gamenumber = 0
+      gamename = "Paused, S to Resume"
+      Sound2:stop()
+      Sound6:play()
       love.update = function()
         seconds = seconds
       end
