@@ -2,6 +2,7 @@
 -- Global Variebels
 
 local current_color = {love.math.random(0, 1), love.math.random(0, 1), love.math.random(0, 1), 1}
+local gamename = "SpamKlickers"
 local seconds = 30
 local score = 0
 local gamenumber = 0
@@ -21,7 +22,7 @@ love.draw = function()
   local clock_display = 'Seconds: ' .. math.floor(seconds) 
   love.graphics.print(clock_display, 275, 360, 0, 3, 3)
   love.graphics.print('Score: ' .. score, 650, 525, 0, 2, 2)
-  love.graphics.print('SpamKlickers', 275, 0, 0, 3, 3)
+  love.graphics.print(gamename, 275, 0, 0, 3, 3)
   love.graphics.print('S to Start    P to pause   Space to reset    ESC to quit', 75, 50, 0, 2, 2)
   love.graphics.print('Press: ' .. gamenumber, 315, 435, 0, 3, 3)
   love.graphics.print('Highscore:' .. highscore, 20, 525, 0, 2, 2)
@@ -88,6 +89,7 @@ love.keypressed = function(pressed_key)
   elseif pressed_key == "s" then
       RandomNumber = love.math.random(1, 4)
       gamenumber = RandomNumber
+      gamename = "Running"
       end
       love.update = function (dt)
         seconds = seconds - dt
@@ -103,6 +105,7 @@ love.keypressed = function(pressed_key)
     if pressed_key == "p" then
       score = score - 5
       RandomNumber = 0
+      gamename = "Paused"
       love.update = function()
         seconds = seconds
       end
