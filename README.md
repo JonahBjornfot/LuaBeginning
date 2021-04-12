@@ -6,3 +6,5 @@ Download trought the _green_ **"code"** button and then **"Download .zip"**. At 
 Or
 
 Clone it to your computer trought **Windows powershell** etc. Open the .zip file and click all the way to the Spamklickers folder. Extract the folder and run the _Spamklickers.exe_ file! **Skip the warning** that pops up and start playing!
+
+![Spamklickers_screenshot](https://user-images.githubusercontent.com/65647056/114409212-80a56280-9baa-11eb-9921-a09abb9732ee.png)
