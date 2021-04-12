@@ -9,6 +9,8 @@ This is a game where you click the buttons **1, 2, 3** or **4** to gain score. T
 
 **Exit** the game by pressing the **"Esc"** key!
 
+_**Varning, recommend to lower volume especially for headphones users**_
+
 **Download** trought the _green_ **"code"** button and then **"Download .zip"**. At last open the .zip, click all the way to the last Spamklickers folder and extract. Then run the _Spamklickers / (SpamKlickers.exe)_ file! **Skip the warning** from windows that pops up by pressing "more info" then "run anyway" and start **playing**!
 
 **Or**
@@ -16,7 +18,5 @@ This is a game where you click the buttons **1, 2, 3** or **4** to gain score. T
 Clone it to your computer trought **Windows powershell** etc. Open the .zip file and click all the way to the Spamklickers folder. Extract the folder and run the _Spamklickers.exe_ file! **Skip the warning** that pops up and start playing!
 
 _How the game will look!_
-
-_**Varning, recommend to lower volume especially for headphones users**_
 
 ![Spamklickers_screenshot](https://user-images.githubusercontent.com/65647056/114409212-80a56280-9baa-11eb-9921-a09abb9732ee.png)
