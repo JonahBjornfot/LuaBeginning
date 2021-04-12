@@ -17,4 +17,6 @@ Clone it to your computer trought **Windows powershell** etc. Open the .zip file
 
 _How the game will look!_
 
+_**Varning, recommend to lower volume especially for headphones users**_
+
 ![Spamklickers_screenshot](https://user-images.githubusercontent.com/65647056/114409212-80a56280-9baa-11eb-9921-a09abb9732ee.png)
