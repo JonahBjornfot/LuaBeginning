@@ -9,7 +9,7 @@ This is a game where you click the buttons **1, 2, 3** or **4** to gain score. T
 
 **Exit** the game by pressing the **"Esc"** key!
 
-_**Varning, recommend to lower volume especially for headphones users!**_
+_**Varning, recommend to lower volume before playing especially for headphones users!**_
 
 **Download** trought the _green_ **"code"** button and then **"Download .zip"**. At last open the .zip, click all the way to the last Spamklickers folder and extract. Then run the _Spamklickers / (SpamKlickers.exe)_ file! **Skip the warning** from windows that pops up by pressing "more info" then "run anyway" and start **playing**!
 
